@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.gestionturnos.gestion_turnos.gestionturnos.model.ObraSocial;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.Paciente;
-import com.gestionturnos.gestion_turnos.gestionturnos.model.Turno;
 
 /**
  * 

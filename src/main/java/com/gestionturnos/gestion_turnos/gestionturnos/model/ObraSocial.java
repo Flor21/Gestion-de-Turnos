@@ -56,13 +56,13 @@ public class ObraSocial implements java.io.Serializable{
             orphanRemoval = true)    
     private List<Turno> turnos;
 
-    public ObraSocial(int idS, String nomb, String direc) {
+   /* public ObraSocial(int idS, String nomb, String direc) {
 
         idObraSocial = idS;
         nombre = nomb;
         direccion = direc;       
     }
-    
+    */
     public ObraSocial(){        
     }
     

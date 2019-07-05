@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.expression.ParseException;
@@ -37,6 +38,7 @@ public class Turno implements java.io.Serializable {
     @NotNull
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha", nullable = false)
+    @Future
     private java.util.Date fecha;
 
     /*  Hora del turno  */
@@ -69,7 +71,7 @@ public class Turno implements java.io.Serializable {
     public Turno(){ 
 
     }
-    
+    /*
     public Turno (int idT, String fech, String hora1, String motConsulta, ObraSocial obraSoc, Medico med, Paciente pac) throws ParseException {
         
         idTurno = idT;
@@ -93,7 +95,7 @@ public class Turno implements java.io.Serializable {
         medico = med;
         
         
-    }
+    }*/
     
     public void setFecha(String fecha) throws ParseException, java.text.ParseException {
         

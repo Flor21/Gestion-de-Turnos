@@ -1,6 +1,5 @@
 package com.gestionturnos.gestion_turnos.gestionturnos.controllers;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -40,9 +39,6 @@ public class PacienteController {
 			
 	@Autowired
 	private ObraSocialRepository obraSocialRepository;
-
-	@Autowired
-	private TurnoRepository turnoRepository;
 	
 	@GetMapping()
 	public Page<Paciente> getPage(Pageable pageable) {
@@ -74,18 +70,6 @@ public class PacienteController {
 		return ResponseEntity.ok(ret);
 	}
 	
-	
-
-
-
-
-
-	/*@GetMapping("/turno/{idTurno}")
-	public ResponseEntity<Set<Paciente>> findByTurno(@PathVariable Integer idTurno) {
-		Turno turnos = turnoRepository.getOne(idTurno);
-		Set<Paciente> ret = repository.findByTurno(turnos);
-		return ResponseEntity.ok(ret);
-	}*/
 	
 	@PostMapping()
 	public ResponseEntity<Paciente> create(@Valid @RequestBody Paciente createRequest) {

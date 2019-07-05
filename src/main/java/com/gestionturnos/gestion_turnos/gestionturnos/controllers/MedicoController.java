@@ -2,7 +2,6 @@ package com.gestionturnos.gestion_turnos.gestionturnos.controllers;
 
 import java.util.Optional;
 import java.util.Set;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.MedicoRepository;
-//import com.gestionturnos.gestion_turnos.gestionturnos.dao.Repository;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.Medico;
-//import com.gestionturnos.gestion_turnos.gestionturnos.model.ObraSocial;
 
 /**
  * 
@@ -60,28 +57,6 @@ public class MedicoController {
 		return ResponseEntity.notFound().build();
 	}
 	
-//	@GetMapping("/obraSocial/{idObraSocial}")
-//	public ResponseEntity<Set<Medico>> findByObraSociales(@PathVariable Integer idObraSocial) {
-//		ObraSocial obraSocial = obraSocialRepository.getOne(idObraSocial);
-//		Set<Medico> ret = repository.findByObraSociales(obraSocial);
-//		return ResponseEntity.ok(ret);o
-//	}
-	/*
-	@GetMapping("/especialidad/{especialidad}/obraSocial/{idObraSocial}")
-	public ResponseEntity<Set<Medico>> findByEspecialidadAndObraSocial(@PathVariable String especialidad,
-	@PathVariable Integer idObraSocial) {
-		ObraSocial obraSocial = obraSocialRepository.getOne(idObraSocial);
-		Set<Medico> ret = repository.findByEspecialidadAndObraSocial(especialidad, obraSocial);
-		return  ResponseEntity.ok(ret);
-	}
-	*/
-	/*
-	 * @GetMapping("/turno/{idTurno}") public ResponseEntity<Set<Medico>>
-	 * findByTurno(@PathVariable Integer idTurno) { Turno turno =
-	 * turnoRepository.getOne(idTurno); Set<Medico> ret =
-	 * repository.findByTurno(turno); return ResponseEntity.ok(ret); }
-	 */
-
 	@GetMapping("/especialidad/{especialidad}")
 	public ResponseEntity<Set<Medico>> findByEspecialidad(@PathVariable String especialidad) {
 		Set<Medico> esp = repository.findByEspecialidad(especialidad);
@@ -90,20 +65,7 @@ public class MedicoController {
 
 	@PostMapping()
 	public ResponseEntity<Medico> create(@Valid @RequestBody Medico createRequest) {
-		/*var medico = createRequest.getObraSociales();
-		var result = obraSocialRepository.findById(medico.getIdObraSociales());
-		if (result.isEmpty()){
-			createRequest.setObraSocial(null);
-		}
-		ObraSocial os = obraSocialRepository.getOne(20);
-	createRequest.getObraSociales().remove(createRequest.getObraSociales().get(0));
-		createRequest.getObraSociales().add(os);
-		System.out.println(createRequest.getObraSocial());
-		createRequest.getObraSocial().add(os);
-		Medico saved = repository.save(createRequest);
-		return ResponseEntity.ok(saved);*/
 		return ResponseEntity.ok(repository.save(createRequest));
-
 	}
 	
 	@PutMapping()
@@ -124,6 +86,6 @@ public class MedicoController {
 		}
 		return ResponseEntity.notFound().build();
 }
-	
+
 	
 }

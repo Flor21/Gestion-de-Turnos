@@ -5,11 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -82,7 +78,7 @@ public class Medico implements java.io.Serializable {
         
     }
     
-    public Medico (int idM, String ap, String nomb, int ingdni, String ingsexo, String estCivil, String direc, int matric, String espec) {
+   /* public Medico (int idM, String ap, String nomb, int ingdni, String ingsexo, String estCivil, String direc, int matric, String espec) {
         idMedico = idM;
         apellido = ap;
         nombre = nomb;
@@ -94,7 +90,7 @@ public class Medico implements java.io.Serializable {
         especialidad = espec;
        
     }
-      
+      */
     //Getters and Setters
 
     public Integer getIdMedico() {

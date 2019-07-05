@@ -13,8 +13,7 @@ public interface ObraSocialRepository extends JpaRepository<ObraSocial, Integer>
 	
 	Optional<ObraSocial> findById(Integer idObraSocial);
 	/*
-	Set<ObraSocial> findByPaciente(Paciente paciente);
-	
+		
 	Set<ObraSocial> findByMedico(Medico medico);
 */
 }

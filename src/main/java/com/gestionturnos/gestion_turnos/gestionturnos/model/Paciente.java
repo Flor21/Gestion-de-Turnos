@@ -4,7 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -100,6 +99,7 @@ public class Paciente implements java.io.Serializable{
     public Paciente(){
         
     }
+    /*
     public Paciente(int idP, String apelli, String nomb, int dninro, String fechnac, String sexoo, String direc, int telef, ObraSocial obrasoc) throws ParseException {
         
         idPaciente = idP;
@@ -118,7 +118,7 @@ public class Paciente implements java.io.Serializable{
         telefono = telef;
         obraSocial = obrasoc;
         
-        }
+        }*/
     
     public void setFechaNacimiento(String fechaNacimiento) throws ParseException, java.text.ParseException {
         

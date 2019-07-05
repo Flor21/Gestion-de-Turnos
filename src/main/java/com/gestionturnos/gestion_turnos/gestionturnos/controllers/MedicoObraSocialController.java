@@ -2,9 +2,6 @@ package com.gestionturnos.gestion_turnos.gestionturnos.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.MedicoObraSocialRepository;
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.MedicoRepository;
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.ObraSocialRepository;
-import com.gestionturnos.gestion_turnos.gestionturnos.dao.TurnoRepository;
-import com.gestionturnos.gestion_turnos.gestionturnos.model.ClaveMedicoObraSocial;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.MedicoObraSocial;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.Medico;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.ObraSocial;
@@ -45,36 +40,14 @@ public class MedicoObraSocialController {
 	private ObraSocialRepository obraSocialRepository;
 
 	@Autowired
-	private TurnoRepository turnoRepository;
-
-	@Autowired
 	private MedicoObraSocialRepository repository;
 
 	@GetMapping()
 	public Page<MedicoObraSocial> getPage(Pageable pageable) {
 		return repository.findAll(pageable);
 	}
-/*
-	@GetMapping("/{idMedico}")
-	public ResponseEntity<MedicoObraSocial> findByIdMedico(@PathVariable Integer idMedico) {
-		
-		Optional<MedicoObraSocial> opt = repository.findByIdMedico(idMedico);
-		if (opt.isPresent())
-			return ResponseEntity.ok(opt.get());
-		return ResponseEntity.notFound().build();
-	}
-	
-	@GetMapping("/obraSocial/{idObraSocial}")
-    
-    public ResponseEntity<MedicoObraSocial> findByIdObra(@PathVariable Integer idObraSocial) {
-		
-		Optional<MedicoObraSocial> opt = repository.findByIdObraSocial(idObraSocial);
-		if (opt.isPresent())
-			return ResponseEntity.ok(opt.get());
-		return ResponseEntity.notFound().build();
-	}
-*/
-	@GetMapping("/medicos")
+
+	@GetMapping("/medicos/{idObraSocial}")
 	public List<Medico> findByIdObraSocial(@PathVariable Integer idObraSocial){
 		List<MedicoObraSocial> filtradoObraSoc = repository.findByIdObraSocial(idObraSocial);
 		List<Medico> Medicos = new ArrayList<>();
@@ -87,7 +60,7 @@ public class MedicoObraSocialController {
 
 	}
 
-	@GetMapping("/obraSocial")
+	@GetMapping("/obraSocial/{idMedico}")
 	public List<ObraSocial> findByIdMedico(@PathVariable Integer idMedico){
 		List<MedicoObraSocial> filtradoMedico = repository.findByIdMedico(idMedico);
 		List<ObraSocial> Obras = new ArrayList<>();
