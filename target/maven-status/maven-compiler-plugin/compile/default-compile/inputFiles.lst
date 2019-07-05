@@ -1,0 +1,17 @@
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/Paciente.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/dao/ObraSocialRepository.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/MedicoObraSocial.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/controllers/PacienteController.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/controllers/ObraSocialController.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/ClaveMedicoObraSocial.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/controllers/TurnoController.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/Turno.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/controllers/MedicoController.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/Medico.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/model/ObraSocial.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/dao/MedicoRepository.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/dao/MedicoObraSocialRepository.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/GestionturnosApplication.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/dao/PacienteRepository.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/controllers/MedicoObraSocialController.java
+/home/flor/Documentos/Facultad/2019/Desarrollo_Client_Servidor/TPI/TP_F/src/main/java/com/gestionturnos/gestion_turnos/gestionturnos/dao/TurnoRepository.java
