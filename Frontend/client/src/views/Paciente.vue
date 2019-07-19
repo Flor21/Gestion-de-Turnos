@@ -1,14 +1,29 @@
 <template>
-<div class="paciente">
-    <v-carousel hide-delimiters>
-     <v-carousel-item
-      v-for="(item,i) in items"
-      :key="i"
-      :src="item.src"
+  <div class="paciente">
+    <v-carousel hide-delimiters height=455>
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="item.src"
         ></v-carousel-item>
     </v-carousel>
-  
-    </div>
+    <v-container grid-list-md text-xs-center>
+      <v-layout>
+        <v-flex xs6>
+          <h2>Registrar Turno</h2>
+          <v-btn fab dark color="cyan" to="/registrarTurno">
+            <v-icon dark>edit</v-icon>
+          </v-btn>
+        </v-flex>
+        <v-flex xs6>
+          <h2>Ver Turno</h2>
+          <v-btn fab dark color="teal" to="/listarTurnop">
+            <v-icon dark>list</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -31,6 +46,6 @@
         ]
       }
     }
-  }
+  }  
 </script>
 

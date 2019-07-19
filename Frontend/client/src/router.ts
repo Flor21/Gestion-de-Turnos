@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Paciente from './views/Paciente.vue';
 import Medico from './views/Medico.vue';
+import RegistrarTurno from './views/RegistrarTurno.vue';
+import ListarTurnop from './views/ListarTurnop.vue';
 
 Vue.use(Router);
 
@@ -13,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: Paciente,
     },
     {
       path: '/about',
@@ -32,6 +34,16 @@ export default new Router({
       path: '/medico',
       name: 'medico',
       component: Medico,
+    },
+    {
+      path: '/registrarTurno',
+      name: 'registrarTurno',
+      component: RegistrarTurno,
+    },
+    {
+      path: '/listarTurnop',
+      name: 'listarTurnop',
+      component: ListarTurnop,
     },
   ],
 });
