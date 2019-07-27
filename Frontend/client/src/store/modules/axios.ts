@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { IMedico, IMedicoObraSocial, IObraSocial, IPaciente, ITurno } from '../models';
+import storage from './localstorage';
 
 const autorizacion: string = 'Autorizacion';
 export const baseUrl = axios.create({
@@ -164,17 +165,17 @@ export async function deleteObraSocial(idObraSocial: string) {
 export async function getTurnos(): Promise<ITurno[]|null> {
     try {
         const response = await baseUrl.get('/turno');
-        return (response.data);
-    } catch(err){
+        return (response.data.content);
+    } catch(err) {
         console.error(err);
     }
-    return null
+    return null;
 }
 
 export async function getTurno(idTurno: number): Promise<ITurno|null> {
     try {
         const response = await baseUrl.get(`turno/${idTurno}`);
-        return (response.data);
+        return (response.data.content);
     } catch(err){
         console.error(err);
     }

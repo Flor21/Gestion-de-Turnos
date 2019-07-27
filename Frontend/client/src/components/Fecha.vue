@@ -1,6 +1,6 @@
 <template>
   <div class="fecha">
-    <h1>Fecha</h1>
+  <h2>Fecha y hora</h2>
     <v-container>
       <v-layout justify-center>
         <v-flex xs6>

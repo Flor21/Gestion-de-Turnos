@@ -1,4 +1,4 @@
-export interface IMedico{
+export interface IMedico {
     idMedico: number;
     apellido: string;
     nombre: string;
@@ -11,21 +11,21 @@ export interface IMedico{
     medicos: [];
 }
 
-export interface IMedicoObraSocial{
+export interface IMedicoObraSocial {
     idMedicoObraSocial: number;
     idMedico: number;
     idObraSocial: number;
     medicoObraSociales: [];
 }
 
-export interface IObraSocial{
+export interface IObraSocial {
     idObraSocial: number;
     nombre: string;
     direccion: string; 
     obraSociales: [];  
 }
 
-export interface ITurno{
+export interface ITurno {
     idTurno: number;
     fecha: string;
     hora: string;
@@ -33,7 +33,7 @@ export interface ITurno{
     turnos: [];
 }
 
-export interface IPaciente{
+export interface IPaciente {
     idPaciente: number;
     apellido: string;
     nombre: string;

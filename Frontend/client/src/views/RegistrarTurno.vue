@@ -1,11 +1,25 @@
 <template>
-    <div class="registrarTurno">
+  <div class="registrarTurno">
     <ListaObraSocial/>
     <Fecha/>
-    <Hora/>
     <MotivoConsulta/>
-    
-    </div>
+    <v-container fluid>
+      <v-layout align-center justify-center>      
+        <v-flex  shrink
+        pa-1>
+          <v-btn color="red" dark @click="cancelar()">Cancelar
+              <v-icon dark right>block</v-icon>
+          </v-btn>  
+        </v-flex>  
+        <v-flex shrink
+        pa-1>   
+          <v-btn color="green" dark @click="obtenerTodo()">Aceptar
+            <v-icon dark right>check_circle</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,13 +33,13 @@ import Hora from '@/components/Hora.vue';
 @Component({
   components: {
     ListaObraSocial,
-    ListaMedicos,
     Fecha,
-    Hora,
     MotivoConsulta,
   },
 })
 
-export default class RegistrarTurno extends Vue {}
+export default class RegistrarTurno extends Vue {
+
+}
 
 </script>
