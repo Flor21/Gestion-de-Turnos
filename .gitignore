@@ -7,6 +7,8 @@
 .project
 .classpath
 /target/
+node_modules
+.factorypath
 
 # Ignore Gradle GUI config
 gradle-app.setting
