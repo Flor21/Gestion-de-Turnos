@@ -16,12 +16,12 @@ services:
 
   node:
     image: node
-    working_dir: /var/Frontend/newclient
+    working_dir: /var/Frontend
     environment:
       - PATH=/var/Frontend/node_modules/.bin:$PATH
     ports:
     - 8000:8080
     volumes:
-    - .:/var/Frontend
+    - ./Frontend:/var/Frontend
     command:
       npm run serve
