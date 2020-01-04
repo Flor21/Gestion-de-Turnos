@@ -15,9 +15,9 @@ import com.gestionturnos.gestion_turnos.gestionturnos.model.Turno;
  *
  */
 @Repository
-public interface TurnoRepository extends JpaRepository<Turno, Integer> {
+public interface TurnoRepository extends JpaRepository<Turno, String> {
 	
-	Optional<Turno> findById(Integer idTurno);
+	Optional<Turno> findById(String idTurno);
 		
 	List<Turno> findByPaciente(Paciente paciente);
 

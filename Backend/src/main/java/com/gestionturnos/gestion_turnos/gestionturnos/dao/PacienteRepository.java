@@ -16,15 +16,15 @@ import com.gestionturnos.gestion_turnos.gestionturnos.model.Paciente;
  *
  */
 @Repository
-public interface PacienteRepository extends JpaRepository<Paciente, Integer> {
+public interface PacienteRepository extends JpaRepository<Paciente, String> {
 	
-	Optional<Paciente> findById(Integer idPaciente);
+	Optional<Paciente> findById(String idPaciente);
 
 	Optional<Paciente> findByDni(Integer dni);
 	
 	Set<Paciente> findByObraSocial(ObraSocial obraSocial);
 
-	List<Paciente> findByIdPaciente(Integer idPaciente);
+	List<Paciente> findByIdPaciente(String idPaciente);
 
 	
 }

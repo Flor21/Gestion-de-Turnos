@@ -48,7 +48,7 @@ public class MedicoObraSocialController {
 	}
 
 	@GetMapping("/medicos/{idObraSocial}")
-	public List<Medico> findByIdObraSocial(@PathVariable Integer idObraSocial){
+	public List<Medico> findByIdObraSocial(@PathVariable String idObraSocial){
 		List<MedicoObraSocial> filtradoObraSoc = repository.findByIdObraSocial(idObraSocial);
 		List<Medico> Medicos = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class MedicoObraSocialController {
 	}
 
 	@GetMapping("/obraSocial/{idMedico}")
-	public List<ObraSocial> findByIdMedico(@PathVariable Integer idMedico){
+	public List<ObraSocial> findByIdMedico(@PathVariable String idMedico){
 		List<MedicoObraSocial> filtradoMedico = repository.findByIdMedico(idMedico);
 		List<ObraSocial> Obras = new ArrayList<>();
 		
@@ -97,9 +97,9 @@ public class MedicoObraSocialController {
 		}
 		return ResponseEntity.notFound().build();
 	}
-
+/*
 	@DeleteMapping("/medico/{idMedico}/obraSocial/{idObraSocial}")
-	public ResponseEntity<?> delete(@PathVariable Integer idMedico, @PathVariable Integer idObraSocial) {
+	public ResponseEntity<?> delete(@PathVariable Integer idMedico, @PathVariable String idObraSocial) {
 		List<MedicoObraSocial> opt = repository.findByIdMedico(idMedico);
 		for (MedicoObraSocial i : opt) {
 			 if	(i.getIdObraSocial() == idObraSocial){
@@ -109,7 +109,7 @@ public class MedicoObraSocialController {
 		}
 
 		return ResponseEntity.notFound().build();
-}
+}*/
 	
 	
 }

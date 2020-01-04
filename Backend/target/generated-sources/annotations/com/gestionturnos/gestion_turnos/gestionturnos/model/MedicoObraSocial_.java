@@ -8,9 +8,9 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(MedicoObraSocial.class)
 public abstract class MedicoObraSocial_ {
 
-	public static volatile SingularAttribute<MedicoObraSocial, Integer> idObraSocial;
-	public static volatile SingularAttribute<MedicoObraSocial, Integer> idMedicoObraSocial;
-	public static volatile SingularAttribute<MedicoObraSocial, Integer> idMedico;
+	public static volatile SingularAttribute<MedicoObraSocial, String> idObraSocial;
+	public static volatile SingularAttribute<MedicoObraSocial, String> idMedicoObraSocial;
+	public static volatile SingularAttribute<MedicoObraSocial, String> idMedico;
 
 	public static final String ID_OBRA_SOCIAL = "idObraSocial";
 	public static final String ID_MEDICO_OBRA_SOCIAL = "idMedicoObraSocial";

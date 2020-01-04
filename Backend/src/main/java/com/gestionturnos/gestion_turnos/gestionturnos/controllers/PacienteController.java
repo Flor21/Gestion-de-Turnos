@@ -46,7 +46,7 @@ public class PacienteController {
 	}
 		
 	@GetMapping("/{idPaciente}")
-	public ResponseEntity<Paciente> findById(@PathVariable Integer idPaciente) {
+	public ResponseEntity<Paciente> findById(@PathVariable String idPaciente) {
 		
 		Optional<Paciente> opt = repository.findById(idPaciente);
 		if (opt.isPresent())
@@ -64,7 +64,7 @@ public class PacienteController {
 	}
 	
 	@GetMapping("/obraSocial/{idObraSocial}")
-	public ResponseEntity<Set<Paciente>> findByObraSocial(@PathVariable Integer idObraSocial) {
+	public ResponseEntity<Set<Paciente>> findByObraSocial(@PathVariable String idObraSocial) {
 		ObraSocial obraSocial = obraSocialRepository.getOne(idObraSocial);
 		Set<Paciente> ret = repository.findByObraSocial(obraSocial);
 		return ResponseEntity.ok(ret);
@@ -92,7 +92,7 @@ public class PacienteController {
 	}
 	
 	@DeleteMapping("/{idPaciente}")
-	public ResponseEntity<Paciente> delete(@PathVariable Integer idPaciente) {
+	public ResponseEntity<Paciente> delete(@PathVariable String idPaciente) {
 		Optional<Paciente> opt = repository.findById(idPaciente);
 		if (opt.isPresent()) {
 			repository.delete(opt.get());

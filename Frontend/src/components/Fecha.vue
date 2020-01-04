@@ -2,30 +2,44 @@
   <div class="fecha">
   <h2>Fecha y hora</h2>
     <v-container>
-      <v-layout justify-center>
-        <v-flex xs6>
-          <v-card dark color="blue accent-1" class="pa-3 ma-4" width=100>            
-           <v-date-picker 
-            v-model="fechaActual"
-            locale="es"
-            :min="minimo"
-            @input="obtFecha(fechaActual)"
-            >
-            </v-date-picker>
-          </v-card>
-        </v-flex>
-        <v-flex xs3>
-          <v-card dark color="blue accent-1" class="pa-3 ma-4">          
-            <v-time-picker
-            v-model="horaselec" 
-            min="8:00"
-            max="19:00"
-            @input="obtHora(horaselec)"
-            ></v-time-picker>
-          </v-card>
-        </v-flex>
-      </v-layout>
+      <v-dialog
+        ref="dialog"
+        v-model="modal"
+        :return-value.sync="fechaS"
+        persistent
+        width="290px"
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="fecha"
+            label="Seleccione la fecha"
+            prepend-icon="event"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker v-model="fecha" scrollable>
+          <v-spacer></v-spacer>
+          <v-btn text color="primary" @click="modal = false">Cancelar</v-btn>
+          <v-btn text color="primary" @click="$refs.dialog.save(fechaN)"  @input="obtFecha(fechaN)">Aceptar</v-btn>
+        </v-date-picker>
+      </v-dialog>
     </v-container>
+    <v-container fluid>
+      <v-radio-group v-model="tiempo" :mandatory="true" @click="tiempoSelec" >
+        <v-radio label="AM" :value="am" ></v-radio>
+        <v-radio label="PM" :value="pm" ></v-radio>
+      </v-radio-group>
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          v-model="hora"
+          :hint="`${hora}`"
+          :items="hora"
+          label="Hora"
+          outlined
+        ></v-select>
+      </v-col>
+    </v-container>
+
   </div>
 </template>
 
@@ -35,30 +49,28 @@ import { ITurno } from '@/store/models';
 
 @Component
 export default class Fecha extends Vue {
-  private fechaselec: ITurno = {} as ITurno;
-  private horaselec: ITurno = {} as ITurno;
-  private minimo: string = '';
-  private fechaActual: string = '';
+
+  private modal: Boolean = false;
+  private fechaSeleccionada : ITurno = {} as ITurno;
+  private fechaS : ITurno = {} as ITurno;
+  private tiempo: String = '';
+  private hora : Array = [];
+  private am: String = 'am';
+  private pm: String = 'pm';
 
   private async created() {
-    this.fechaActual = new Date().toISOString().substr(0,10);
-    this.minimo = new Date().toISOString().substr(0, 10);
-    this.fechaselec = { 
-      idTurno: 10,
-      fecha: this.fechaActual,
-      hora: '',
-      motivoConsulta: '',
-      turnos: [],
+    this.fechaSeleccionada = fechaS;
+  }
+
+  private async tiempoSelec(value: String){
+    console.log(value);
+    if(value == "am"){
+      this.hora = ['08:00','09:00', '10:00', '11:00', '12:00'];
+    }else{
+      this.hora = ['18:00','19:00', '20:00'];
     }
   }
   
-  private async obtFecha(fecha: ITurno) {
-
-    console.log(fecha);
-  }
-  private async obtHora(hora: ITurno){
-    console.log(hora);
-  }
   
 
 }

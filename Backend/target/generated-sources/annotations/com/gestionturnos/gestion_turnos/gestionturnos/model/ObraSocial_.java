@@ -9,7 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(ObraSocial.class)
 public abstract class ObraSocial_ {
 
-	public static volatile SingularAttribute<ObraSocial, Integer> idObraSocial;
+	public static volatile SingularAttribute<ObraSocial, String> idObraSocial;
 	public static volatile ListAttribute<ObraSocial, Paciente> paciente;
 	public static volatile SingularAttribute<ObraSocial, String> direccion;
 	public static volatile ListAttribute<ObraSocial, Turno> turnos;

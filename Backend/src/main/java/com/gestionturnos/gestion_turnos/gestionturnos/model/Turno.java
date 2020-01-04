@@ -4,6 +4,8 @@ import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,13 +30,11 @@ public class Turno implements java.io.Serializable {
     /**
 	 * 
 	 */
-    private static final long serialVersionUID = 9066465383169529803L;
     
     /*  Id Turno    */
     @Id
-    @GeneratedValue
     @Column(name = "idTurno")
-    private Integer idTurno;
+    private String idTurno = UUID.randomUUID().toString().replace("-","");
 
     /*  Fecha del turno */
     @NotNull
@@ -117,11 +117,11 @@ public class Turno implements java.io.Serializable {
     }
     /*  Getters and Setters */
 
-    public Integer getIdTurno() {
+    public String getIdTurno() {
         return idTurno;
     }
 
-    public void setIdTurno(Integer idTurno) {
+    public void setIdTurno(String idTurno) {
         this.idTurno = idTurno;
     }
 

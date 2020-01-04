@@ -1,6 +1,5 @@
 <template>
     <div class="motivoConsulta">
-        <v-form v-model="valid">
             <h2>Motivo</h2>
             <v-container>
                 <v-layout>
@@ -15,7 +14,6 @@
                     </v-flex>
                 </v-layout>
             </v-container>
-        </v-form>
     </div>
 </template>
 

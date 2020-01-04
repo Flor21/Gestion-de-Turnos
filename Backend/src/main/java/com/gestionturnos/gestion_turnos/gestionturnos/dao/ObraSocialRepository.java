@@ -9,9 +9,9 @@ import java.util.Optional;
  * @author flor
  *
  */
-public interface ObraSocialRepository extends JpaRepository<ObraSocial, Integer> {
+public interface ObraSocialRepository extends JpaRepository<ObraSocial, String> {
 	
-	Optional<ObraSocial> findById(Integer idObraSocial);
+	Optional<ObraSocial> findById(String idObraSocial);
 	/*
 		
 	Set<ObraSocial> findByMedico(Medico medico);

@@ -41,7 +41,7 @@ public class MedicoController {
 	}
 
 	@GetMapping("/{idMedico}")
-	public ResponseEntity<Medico> findById(@PathVariable Integer idMedico) {
+	public ResponseEntity<Medico> findById(@PathVariable String idMedico) {
 		
 		Optional<Medico> opt = repository.findById(idMedico);
 		if (opt.isPresent())
@@ -78,7 +78,7 @@ public class MedicoController {
 	}
 	
 	@DeleteMapping("/{idMedico}")
-	public ResponseEntity<?> delete(@PathVariable Integer idMedico) {
+	public ResponseEntity<?> delete(@PathVariable String idMedico) {
 		Optional<Medico> opt = repository.findById(idMedico);
 		if (opt.isPresent()) {
 			repository.delete(opt.get());

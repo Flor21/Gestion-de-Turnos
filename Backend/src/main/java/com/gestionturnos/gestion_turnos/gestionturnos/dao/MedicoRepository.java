@@ -15,9 +15,9 @@ import com.gestionturnos.gestion_turnos.gestionturnos.model.ObraSocial;
  *
  */
 @Repository
-public interface MedicoRepository extends JpaRepository<Medico, Integer>{
+public interface MedicoRepository extends JpaRepository<Medico, String>{
 	
-	Optional<Medico> findById(Integer idMedico);
+	Optional<Medico> findById(String idMedico);
 	
 	Optional<Medico> findByMatricula(Integer matricula);
 

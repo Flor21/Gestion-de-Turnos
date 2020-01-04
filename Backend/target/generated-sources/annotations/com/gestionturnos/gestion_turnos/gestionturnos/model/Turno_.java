@@ -16,7 +16,7 @@ public abstract class Turno_ {
 	public static volatile SingularAttribute<Turno, Paciente> paciente;
 	public static volatile SingularAttribute<Turno, ObraSocial> obraSocial;
 	public static volatile SingularAttribute<Turno, Medico> medico;
-	public static volatile SingularAttribute<Turno, Integer> idTurno;
+	public static volatile SingularAttribute<Turno, String> idTurno;
 
 	public static final String FECHA = "fecha";
 	public static final String MOTIVO_CONSULTA = "motivoConsulta";

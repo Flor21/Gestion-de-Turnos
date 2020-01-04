@@ -10,7 +10,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Paciente.class)
 public abstract class Paciente_ {
 
-	public static volatile SingularAttribute<Paciente, Integer> idPaciente;
+	public static volatile SingularAttribute<Paciente, String> idPaciente;
 	public static volatile SingularAttribute<Paciente, Date> fechaNacimiento;
 	public static volatile SingularAttribute<Paciente, ObraSocial> obraSocial;
 	public static volatile SingularAttribute<Paciente, String> apellido;

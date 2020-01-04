@@ -43,8 +43,7 @@
     </v-layout>
   </v-container>
 </div>
-
-  </div> 
+ 
 </template>
 
 
@@ -58,8 +57,6 @@ import { getMedicoObra } from '@/store/modules/axios';
 import { IMedico } from '@/store/models';
 import { IMedicoObraSocial } from '@/store/models';
 
-
-
 @Component
 export default class ListaObraSocial extends Vue {
   private items: IObraSocial[]|null = null;
@@ -70,13 +67,13 @@ export default class ListaObraSocial extends Vue {
   private async created() {
     const laomalo = await getObraSociales();
     this.items = laomalo;
-    //this.select = this.items[0];
+    this.select = this.items[0];
   }
   private async obraSeleccionada(obra: IObraSocial) {
-    //console.log(obra.idObraSocial)
+    console.log(obra.idObraSocial)
     const medicos = await getMedicoObra(obra.idObraSocial);
     this.ite = medicos;
-    //console.log(medicos)
+    console.log(medicos)
   }
  
 }

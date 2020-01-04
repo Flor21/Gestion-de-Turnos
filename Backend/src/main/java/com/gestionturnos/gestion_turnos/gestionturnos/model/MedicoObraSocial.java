@@ -1,8 +1,9 @@
 package com.gestionturnos.gestion_turnos.gestionturnos.model;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
@@ -16,42 +17,41 @@ import javax.persistence.Id;
 //@IdClass(ClaveMedicoObraSocial.class)
 public class MedicoObraSocial {
     @Id
-    @GeneratedValue
     @Column(name = "idMedicoObraSocial")
-    private Integer idMedicoObraSocial;
+    private String idMedicoObraSocial = UUID.randomUUID().toString().replace("-","");
     
     /*  Id Medico   */
     
-    private Integer idMedico;
+    private String idMedico;
     
     /*  Id Obra Social  */
     
-    private Integer idObraSocial;
+    private String idObraSocial;
 
     public MedicoObraSocial(){}
 
-    public Integer getIdObraSocial() {
+    public String getIdObraSocial() {
         return idObraSocial;
 
     }
 
-    public void setIdObraSocial(Integer idObraSocial){
+    public void setIdObraSocial(String idObraSocial){
         this.idObraSocial = idObraSocial;
     }
 
-    public Integer getIdMedico() {
+    public String getIdMedico() {
 	    return idMedico;
     }
 
-    public void setIdMedico(Integer idMedico){
+    public void setIdMedico(String idMedico){
         this.idMedico = idMedico;
     }
 
-    public Integer getIdMedicoObraSocial() {
+    public String getIdMedicoObraSocial() {
 	    return idMedicoObraSocial;
     }
 
-    public void setIdMedicoObraSocial(Integer idMedicoObraSocial){
+    public void setIdMedicoObraSocial(String idMedicoObraSocial){
         this.idMedicoObraSocial = idMedicoObraSocial;
     }
 

@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -37,12 +38,10 @@ public class Paciente implements java.io.Serializable{
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
     @Column(name = "idPaciente")
-    private Integer idPaciente;
+    private String idPaciente = UUID.randomUUID().toString().replace("-","");
    
     @NotNull
     @Size(min= 1, max=45)
@@ -133,11 +132,11 @@ public class Paciente implements java.io.Serializable{
     
     //Getters and Setters
 
-    public Integer getIdPaciente() {
+    public String getIdPaciente() {
         return idPaciente;
     }
 
-    public void setIdPaciente(Integer idPaciente) {
+    public void setIdPaciente(String idPaciente) {
         this.idPaciente = idPaciente;
     }
 

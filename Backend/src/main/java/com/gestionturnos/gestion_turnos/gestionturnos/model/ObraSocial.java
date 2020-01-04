@@ -1,11 +1,11 @@
 package com.gestionturnos.gestion_turnos.gestionturnos.model;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -24,13 +24,11 @@ public class ObraSocial implements java.io.Serializable{
    /**
 	 * 
 	 */
-    private static final long serialVersionUID = 1L;
     
     /*  Id Obra Social  */
     @Id
-    @GeneratedValue
     @Column(name = "idObraSocial")
-    private Integer idObraSocial;
+    private String idObraSocial = UUID.randomUUID().toString().replace("-","");
     
     /*  Nombre de la Obra Social    */
     @NotNull
@@ -70,11 +68,11 @@ public class ObraSocial implements java.io.Serializable{
     
     //Getters and Setters
 
-    public Integer getIdObraSocial() {
+    public String getIdObraSocial() {
         return idObraSocial;
     }
 
-    public void setIdObraSocial(Integer idObraSocial) {
+    public void setIdObraSocial(String idObraSocial) {
         this.idObraSocial = idObraSocial;
     }
 

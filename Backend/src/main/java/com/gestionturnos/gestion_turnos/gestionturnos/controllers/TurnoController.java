@@ -48,7 +48,7 @@ public class TurnoController {
 	}
 	
 	@GetMapping("/{idTurno}")
-	public ResponseEntity<Turno> findById(@PathVariable Integer idTurno) {
+	public ResponseEntity<Turno> findById(@PathVariable String idTurno) {
 		
 		Optional<Turno> opt = repository.findById(idTurno);
 		if (opt.isPresent())
@@ -58,7 +58,7 @@ public class TurnoController {
 	
 	
 	@GetMapping("/turnos/paciente/{idPaciente}")
-	public List<Turno> findByPaciente(@PathVariable Integer idPaciente) {
+	public List<Turno> findByPaciente(@PathVariable String idPaciente) {
 		
 		Paciente pac = pacienteRepository.getOne(idPaciente);
 		List<Turno> filtradoPaciente = repository.findByPaciente(pac);
@@ -68,7 +68,7 @@ public class TurnoController {
 
 	
 	@GetMapping("/turnos/medico/{idMedico}")
-	public List<Turno> findByMedico(@PathVariable Integer idMedico) {
+	public List<Turno> findByMedico(@PathVariable String idMedico) {
 		Medico medico = medicoRepository.getOne(idMedico);
 		List<Turno> filtradoMedico = repository.findByMedico(medico);
 
@@ -92,7 +92,7 @@ public class TurnoController {
 	}
 	
 	@DeleteMapping("/{idTurno}")
-	public ResponseEntity<Turno> delete(@PathVariable Integer idTurno) {
+	public ResponseEntity<Turno> delete(@PathVariable String idTurno) {
 		Optional<Turno> opt = repository.findById(idTurno);
 		if (opt.isPresent()) {
 			repository.delete(opt.get());

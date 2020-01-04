@@ -13,7 +13,7 @@ public abstract class Medico_ {
 	public static volatile SingularAttribute<Medico, String> direccion;
 	public static volatile SingularAttribute<Medico, Integer> matricula;
 	public static volatile ListAttribute<Medico, Turno> turnos;
-	public static volatile SingularAttribute<Medico, Integer> idMedico;
+	public static volatile SingularAttribute<Medico, String> idMedico;
 	public static volatile SingularAttribute<Medico, String> estadoCivil;
 	public static volatile SingularAttribute<Medico, String> sexo;
 	public static volatile SingularAttribute<Medico, String> nombre;

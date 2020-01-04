@@ -1,5 +1,5 @@
 export interface IMedico {
-    idMedico: number;
+    idMedico: string;
     apellido: string;
     nombre: string;
     dni: number;
@@ -12,21 +12,21 @@ export interface IMedico {
 }
 
 export interface IMedicoObraSocial {
-    idMedicoObraSocial: number;
-    idMedico: number;
-    idObraSocial: number;
+    idMedicoObraSocial: string;
+    idMedico: string;
+    idObraSocial: string;
     medicoObraSociales: [];
 }
 
 export interface IObraSocial {
-    idObraSocial: number;
+    idObraSocial: string;
     nombre: string;
     direccion: string; 
     obraSociales: [];  
 }
 
 export interface ITurno {
-    idTurno: number;
+    idTurno: string;
     fecha: string;
     hora: string;
     motivoConsulta: string;
@@ -34,7 +34,7 @@ export interface ITurno {
 }
 
 export interface IPaciente {
-    idPaciente: number;
+    idPaciente: string;
     apellido: string;
     nombre: string;
     dni: number;

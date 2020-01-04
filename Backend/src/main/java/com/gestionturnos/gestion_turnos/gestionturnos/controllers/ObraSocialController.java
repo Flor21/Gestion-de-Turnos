@@ -44,7 +44,7 @@ public class ObraSocialController {
 	}
 	
 	@GetMapping("/{idObraSocial}")
-	public ResponseEntity<ObraSocial> findById(@PathVariable Integer idObraSocial) {
+	public ResponseEntity<ObraSocial> findById(@PathVariable String idObraSocial) {
 		Optional<ObraSocial> opt = repository.findById(idObraSocial);
 		if (opt.isPresent())
 			return ResponseEntity.ok(opt.get());
@@ -80,7 +80,7 @@ public class ObraSocialController {
 	}
 	
 	@DeleteMapping("/{idObraSocial}")
-	public ResponseEntity<ObraSocial> delete(@PathVariable Integer idObraSocial) {
+	public ResponseEntity<ObraSocial> delete(@PathVariable String idObraSocial) {
 		Optional<ObraSocial> opt = repository.findById(idObraSocial);
 		if (opt.isPresent()) {
 			repository.delete(opt.get());

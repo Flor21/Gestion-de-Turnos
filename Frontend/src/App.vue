@@ -20,7 +20,7 @@
           </v-list-tile-avatar>
 
           <v-list-tile-content>
-            <v-list-tile-title>John Leider</v-list-tile-title>
+            <v-list-tile-title>Roberto Ruiz</v-list-tile-title>
           </v-list-tile-content>
 
           <v-list-tile-action>
@@ -45,18 +45,12 @@
 </template>
 
 <script>
-import Paciente from '@/views/Paciente.vue';
-export default {
-  name: 'App',
-  components: {
-    Paciente
-  },
-  data () {
-    return {
+  export default {
+    data () {
+      return {
         drawer: true,
         mini: true,
-        right: null
-    }
+      }
+    },
   }
-}
 </script>

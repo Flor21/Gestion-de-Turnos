@@ -1,6 +1,7 @@
 package com.gestionturnos.gestion_turnos.gestionturnos.model;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -24,12 +25,10 @@ public class Medico implements java.io.Serializable {
      /**
 	 * 
 	 */
-    private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue
     @Column(name = "idMedico")
-    private Integer idMedico;
+    private String idMedico = UUID.randomUUID().toString().replace("-","");
     
     @NotNull
     @Size(min= 1, max=45)
@@ -95,11 +94,11 @@ public class Medico implements java.io.Serializable {
       */
     //Getters and Setters
 
-    public Integer getIdMedico() {
+    public String getIdMedico() {
         return idMedico;
     }
 
-    public void setIdMedico(Integer idMedico) {
+    public void setIdMedico(String idMedico) {
         this.idMedico = idMedico;
     }
 
