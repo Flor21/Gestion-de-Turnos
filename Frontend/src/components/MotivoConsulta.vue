@@ -6,7 +6,7 @@
                     <v-flex xs12 md4>
                         <v-text-field
                             v-model="motivoConsulta"
-                            :counter="5"
+                            :counter="30"
                             label="Escriba su consulta"
                             required
                             @input="obtMotivo(motivoConsulta)"
@@ -27,12 +27,10 @@ export default class MotivoConsulta extends Vue {
     private motivoConsulta: string = '';
     private mot: string = '';
 
-    private async created() {
-        this.$emit('motivoDeConsulta', this.motivo)
-    }
     private async obtMotivo( mot: string) {
-        console.log(mot);
         this.motivo = mot;
+        this.$emit('motivoDeConsulta', this.motivo);
+
     }
 }
 

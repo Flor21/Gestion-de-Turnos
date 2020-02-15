@@ -1,8 +1,12 @@
 <template>
   <div class="registrarTurno">
-    <ListaObraSocial/>
-    <Fecha/>
-    <MotivoConsulta/>
+    <ListaObraSocial
+      @medicoSeleccionado = "getMedico" />
+    <Fecha
+      @fechaSeleccionada="getFecha"
+      @horaSeleccionada="getHora"/>
+    <MotivoConsulta
+      @motivoDeConsulta = "getMotivo"/>
     <v-container fluid>
       <v-layout align-center justify-center>      
         <v-flex  shrink
@@ -36,10 +40,35 @@ import Hora from '@/components/Hora.vue';
     Fecha,
     MotivoConsulta,
   },
+  
 })
 
 export default class RegistrarTurno extends Vue {
+  private fechaS : String;
+  private horaS: String;
+  private motivoE: String;
+  private medicoObraS;
 
+  obtenerTodo(data) {
+    console.log(this.fechaS, this.horaS, this.motivoE, this.medicoObraS);
+  }
+
+  getFecha(fecha) {
+    this.fechaS = fecha;
+  }
+
+  getHora(hora) {
+    this.horaS = hora;
+  }
+
+  getMotivo(motivo) {
+    this.motivoE = motivo;
+  }
+
+  getMedico(medicoObra) {
+    this.medicoObraS = medicoObra;
+
+  }
 }
 
 </script>

@@ -21,9 +21,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @Entity
 public class ObraSocial implements java.io.Serializable{
-   /**
-	 * 
-	 */
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
+    	 * 
+    	 */
     
     /*  Id Obra Social  */
     @Id

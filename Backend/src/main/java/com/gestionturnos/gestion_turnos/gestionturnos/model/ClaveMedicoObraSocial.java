@@ -9,6 +9,11 @@ import javax.persistence.Column;
  */
 
 public class ClaveMedicoObraSocial implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     @Column(name = "idMedico", nullable = false)
     private Integer idMedico;
     

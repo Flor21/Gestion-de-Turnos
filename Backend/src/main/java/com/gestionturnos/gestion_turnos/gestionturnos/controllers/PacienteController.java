@@ -20,10 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.ObraSocialRepository;
 import com.gestionturnos.gestion_turnos.gestionturnos.dao.PacienteRepository;
-import com.gestionturnos.gestion_turnos.gestionturnos.dao.TurnoRepository;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.ObraSocial;
 import com.gestionturnos.gestion_turnos.gestionturnos.model.Paciente;
-import com.gestionturnos.gestion_turnos.gestionturnos.model.Turno;
 
 /**
  * 

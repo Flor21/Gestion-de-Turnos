@@ -37,6 +37,7 @@
           persistent-hint
           return-object
           single-line
+          @input="medicoSeleccionado(sel)"
         >
         </v-select>
       </v-flex>
@@ -63,17 +64,25 @@ export default class ListaObraSocial extends Vue {
   private select: IObraSocial = {} as IObraSocial;
   private ite: IMedicoObraSocial[]|null = null;
   private sel: IMedicoObraSocial = {} as IMedicoObraSocial;
+  private idObraSoc : String = '';
+  private idMed : String = '';
 
   private async created() {
     const laomalo = await getObraSociales();
     this.items = laomalo;
     this.select = this.items[0];
   }
+
   private async obraSeleccionada(obra: IObraSocial) {
-    console.log(obra.idObraSocial)
+    this.idObraSoc = obra.idObraSocial;
     const medicos = await getMedicoObra(obra.idObraSocial);
     this.ite = medicos;
-    console.log(medicos)
+  }
+
+  private async medicoSeleccionado(sel: IMedico) {
+    this.idMed = sel.idMedico
+    this.$emit('medicoSeleccionado',[this.idObraSoc, this.idMed])
+ 
   }
  
 }
